@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>과학의 유용성 | Wonder of Science</title>
+<meta name="description" content="고등학생을 위한 과학의 유용성: 일상, 사회, 진로까지 한 번에 보기">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070A1A; --ink:#E8ECFF; --muted:#B7C0EA; --line:#2A3270;
+    --accent:#6AD5FF; --accent2:#9D7BFF; --ok:#25e3a3; --bad:#ff6a8b;
+    --card:#0e133bcc; --radius:18px; --shadow:0 0 22px rgba(106,213,255,.35), 0 0 36px rgba(157,123,255,.25);
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0;background:radial-gradient(1400px 800px at 85% -10%,#1d2460 0%,#0b0f27 45%,#070A1A 100%);color:var(--ink);font-family:'Noto Sans KR','Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+  a{color:var(--accent)} img,svg{display:block;max-width:100%}
+  .container{width:min(1100px,92vw);margin-inline:auto}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(10px);background:linear-gradient(180deg,#0E1333EE,#0E133300);border-bottom:1px solid var(--line)}
+  nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+  .navlinks{display:flex;gap:12px;flex-wrap:wrap}
+  .navlinks a{padding:8px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink)}
+  .navlinks a:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+  header.hero{position:relative;overflow:hidden;isolation:isolate}
+  .hero .glow{position:absolute;inset:0;background:
+    radial-gradient(700px 420px at 20% 30%, rgba(106,213,255,.20), transparent 60%),
+    radial-gradient(600px 520px at 80% 35%, rgba(157,123,255,.18), transparent 65%);
+    mix-blend:screen;pointer-events:none}
+  .hero .content{padding:96px 0 64px}
+  .kicker{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:.9rem}
+  h1{font-size:clamp(2rem,4.5vw,3.6rem);line-height:1.1;margin:.3rem 0 1rem}
+  .lead{color:var(--muted);max-width:70ch}
+  .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#061229;border:none;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;box-shadow:var(--shadow)}
+  .btn.secondary{background:#121942;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  section{padding:56px 0}
+  h2{font-size:clamp(1.5rem,2.5vw,2.2rem);margin:0 0 14px}
+  h3{margin:8px 0 6px}
+  .grid{display:grid;gap:18px}
+  .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g-3{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:680px){.g-3,.g-2{grid-template-columns:1fr}}
+  .card{background:linear-gradient(180deg,#0f1441cc,#0b1038cc);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .pill{display:inline-block;margin:2px 6px 0 0;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.85rem}
+  .mini{font-size:.95rem;color:var(--muted)}
+  .table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .table th,.table td{padding:12px 14px;border-bottom:1px solid #2A327022}
+  .table th{background:#131A47;text-align:left}
+  .table tr:last-child td{border-bottom:none}
+  .quiz{display:grid;gap:12px}
+  .choice{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#121942;color:var(--ink);cursor:pointer;text-align:left}
+  .choice.correct{outline:2px solid var(--ok)} .choice.wrong{outline:2px solid var(--bad)}
+  .foot{color:#9BA5D6;font-size:.9rem;border-top:1px dashed var(--line);padding-top:24px;margin-top:16px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#121942;border:1px solid var(--line)}
+  .illus{aspect-ratio:16/9;border-radius:14px;border:1px solid var(--line);background:#0b1038}
+  .badge{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .b{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:.85rem;color:var(--muted)}
+  .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
+</head>
+<body>
+  <nav aria-label="주요 메뉴">
+    <div class="container row">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> Wonder of Science</div>
+      <div class="navlinks">
+        <a href="#why">왜 유용할까</a>
+        <a href="#fields">분야별</a>
+        <a href="#everyday">일상</a>
+        <a href="#lab">미니 실험</a>
+        <a href="#career">진로</a>
+        <a href="#quiz">퀴즈</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="container content">
+      <p class="kicker">Science for Everyday Life</p>
+      <h1>과학은 <em>세상을 설계하는 언어</em>입니다</h1>
+      <p class="lead">고등학교 과학은 교과서를 넘어서 문제 해결과 미래 진로로 이어집니다. 신비로운 원리를 일상의 선택에 연결해 보세요.</p>
+      <div class="cta">
+        <a class="btn" href="#everyday">일상에서 보기</a>
+        <a class="btn secondary" href="#fields">분야별 보기</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 왜 유용한가 -->
+    <section id="why" class="container">
+      <div class="badge"><span class="b">증거기반</span><span class="b">문제해결</span><span class="b">미래역량</span></div>
+      <h2>왜 과학이 유용할까?</h2>
+      <div class="grid g-3">
+        <article class="card">
+          <div class="illus" aria-hidden="true">
+            <!-- AI풍 일러스트: 데이터·증거 -->
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#6AD5FF"/><stop offset="1" stop-color="#9D7BFF"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <g opacity=".28">
+                <circle cx="100" cy="60" r="2" fill="#cfe3ff"/>
+                <circle cx="700" cy="120" r="2" fill="#cfe3ff"/>
+                <circle cx="420" cy="40" r="2" fill="#cfe3ff"/>
+                <circle cx="220" cy="180" r="2" fill="#cfe3ff"/>
+                <circle cx="520" cy="260" r="2" fill="#cfe3ff"/>
+                <circle cx="660" cy="360" r="2" fill="#cfe3ff"/>
+              </g>
+              <polyline points="60,380 140,310 220,330 300,250 380,260 460,180 540,210 620,120 700,160" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="460" cy="180" r="32" fill="none" stroke="#6AD5FF" stroke-width="3"/>
+              <text x="40" y="420" fill="#B7C0EA" font-size="18">데이터로 판단하기</text>
+            </svg>
+          </div>
+          <h3>더 나은 선택</h3>
+          <p>가설→증거→검증의 사고는 건강·환경·소비에서 합리적 결정을 돕습니다.</p>
+          <p class="mini">키워드: 통계, 인과, 재현성</p>
+        </article>
+        <article class="card">
+          <div class="illus" aria-hidden="true">
+            <!-- AI풍 일러스트: 설계·최적화 -->
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9D7BFF"/><stop offset="1" stop-color="#6AD5FF"/></linearGradient></defs>
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <rect x="120" y="120" width="560" height="210" rx="18" fill="none" stroke="url(#g2)" stroke-width="6"/>
+              <g stroke="#6AD5FF" stroke-width="3">
+                <line x1="120" y1="225" x2="680" y2="225"/>
+                <line x1="400" y1="120" x2="400" y2="330"/>
+              </g>
+              <circle cx="400" cy="225" r="60" fill="none" stroke="#9D7BFF" stroke-width="3"/>
+              <text x="160" y="370" fill="#B7C0EA" font-size="18">설계와 최적화</text>
+            </svg>
+          </div>
+          <h3>세상을 설계하는 언어</h3>
+          <p>안전한 교통, 효율적 에너지, 친환경 소재—모두 과학 원리에서 출발합니다.</p>
+          <p class="mini">키워드: 모델링, 제약·목표, 최적화</p>
+        </article>
+        <article class="card">
+          <div class="illus" aria-hidden="true">
+            <!-- AI풍 일러스트: 확률·불확실성 -->
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <path d="M80,360 Q200,120 320,240 T560,240 T720,180" fill="none" stroke="#6AD5FF" stroke-width="6"/>
+              <g fill="#9D7BFF" opacity=".9">
+                <circle cx="320" cy="240" r="7"/><circle cx="560" cy="240" r="7"/><circle cx="720" cy="180" r="7"/>
+              </g>
+              <text x="40" y="420" fill="#B7C0EA" font-size="18">불확실성 다루기</text>
+            </svg>
+          </div>
+          <h3>불확실성을 다루는 힘</h3>
+          <p>완벽한 정답이 없을 때, 과학은 가능한 해를 찾는 체계를 제공합니다.</p>
+          <p class="mini">키워드: 확률, 오차, 신뢰구간</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 분야별 -->
+    <section id="fields" class="container">
+      <h2>분야별 한눈에 보기</h2>
+      <div class="grid g-3">
+        <div class="card">
+          <div class="illus" aria-label="AI풍 물리 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <g stroke="#6AD5FF" stroke-width="5" fill="none">
+                <circle cx="200" cy="230" r="70"/>
+                <circle cx="600" cy="230" r="70"/>
+                <line x1="270" y1="230" x2="530" y2="230"/>
+              </g>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">물리: 힘과 에너지</text>
+            </svg>
+          </div>
+          <h3>물리</h3>
+          <p>반도체, MRI, 위성항법까지—모두 힘·에너지·파동의 적용입니다.</p>
+          <span class="pill">역학</span><span class="pill">전자기</span><span class="pill">파동</span>
+        </div>
+        <div class="card">
+          <div class="illus" aria-label="AI풍 화학 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <g fill="none" stroke="#9D7BFF" stroke-width="5">
+                <polygon points="220,180 260,240 220,300 160,300 120,240 160,180" />
+                <polygon points="600,180 640,240 600,300 540,300 500,240 540,180" />
+              </g>
+              <line x1="260" y1="240" x2="540" y2="240" stroke="#6AD5FF" stroke-width="5" stroke-dasharray="10 10"/>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">화학: 결합·반응</text>
+            </svg>
+          </div>
+          <h3>화학</h3>
+          <p>신소재·의약·배터리의 핵심. 분자를 바꾸면 성질도 바뀝니다.</p>
+          <span class="pill">결합</span><span class="pill">반응속도</span><span class="pill">전기화학</span>
+        </div>
+        <div class="card">
+          <div class="illus" aria-label="AI풍 생명과학 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <ellipse cx="250" cy="230" rx="90" ry="60" fill="none" stroke="#6AD5FF" stroke-width="5"/>
+              <circle cx="250" cy="230" r="18" fill="#9D7BFF"/>
+              <path d="M500,180 q40,50 0,100 q-40,50 0,100" fill="none" stroke="#6AD5FF" stroke-width="5"/>
+              <path d="M540,180 q40,50 0,100 q-40,50 0,100" fill="none" stroke="#9D7BFF" stroke-width="5"/>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">생명: 세포·유전자</text>
+            </svg>
+          </div>
+          <h3>생명과학</h3>
+          <p>세포·유전자·신경—건강관리와 바이오 기술로 이어집니다.</p>
+          <span class="pill">유전</span><span class="pill">항상성</span><span class="pill">신경</span>
+        </div>
+        <div class="card">
+          <div class="illus" aria-label="AI풍 지구·환경 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <circle cx="250" cy="230" r="90" fill="none" stroke="#6AD5FF" stroke-width="5"/>
+              <path d="M170,230 q80,-60 160,0 q-80,60 -160,0" fill="#9D7BFF" opacity=".25"/>
+              <g stroke="#6AD5FF" stroke-width="3"><line x1="480" y1="330" x2="700" y2="170"/><line x1="520" y1="330" x2="740" y2="170"/></g>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">지구·환경: 기후</text>
+            </svg>
+          </div>
+          <h3>지구·환경</h3>
+          <p>기후 대응·재난 예측·자원 순환 설계에 반드시 필요합니다.</p>
+          <span class="pill">기후</span><span class="pill">지질</span><span class="pill">수문</span>
+        </div>
+        <div class="card">
+          <div class="illus" aria-label="AI풍 천문·우주 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <circle cx="410" cy="240" r="25" fill="#9D7BFF"/>
+              <circle cx="410" cy="240" r="120" fill="none" stroke="#6AD5FF" stroke-width="5"/>
+              <circle cx="530" cy="240" r="6" fill="#6AD5FF"/>
+              <circle cx="300" cy="240" r="6" fill="#6AD5FF"/>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">천문·우주: 궤도</text>
+            </svg>
+          </div>
+          <h3>천문·우주</h3>
+          <p>우주 관측 기술은 통신·GPS·영상처리 발전을 이끕니다.</p>
+          <span class="pill">중력</span><span class="pill">스펙트럼</span><span class="pill">외계행성</span>
+        </div>
+        <div class="card">
+          <div class="illus" aria-label="AI풍 데이터·AI 일러스트">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#0B1038"/>
+              <rect x="120" y="280" width="80" height="70" fill="#6AD5FF" opacity=".7"/>
+              <rect x="240" y="250" width="80" height="100" fill="#6AD5FF" opacity=".8"/>
+              <rect x="360" y="210" width="80" height="140" fill="#6AD5FF"/>
+              <rect x="480" y="230" width="80" height="120" fill="#9D7BFF"/>
+              <rect x="600" y="170" width="80" height="180" fill="#9D7BFF" opacity=".9"/>
+              <text x="24" y="420" fill="#B7C0EA" font-size="18">데이터·AI: 예측</text>
+            </svg>
+          </div>
+          <h3>데이터·AI</h3>
+          <p>실험·관측 데이터를 분석해 법칙을 찾고, 모델로 예측합니다. 윤리도 함께!</p>
+          <span class="pill">통계</span><span class="pill">시뮬레이션</span><span class="pill">AI 윤리</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 일상의 과학 -->
+    <section id="everyday" class="container">
+      <h2>일상 속 과학의 유용성</h2>
+      <div class="grid g-2">
+        <div class="card">
+          <h3>스마트폰은 작은 과학 박물관</h3>
+          <ul>
+            <li><b>가속도계·자이로</b> — 운동량·각속도 센서</li>
+            <li><b>카메라</b> — 광학·이미지센서 물리</li>
+            <li><b>배터리</b> — 리튬이온 산화·환원</li>
+            <li><b>위치</b> — GPS에 상대성이론 보정</li>
+          </ul>
+          <p class="mini">한 제품에 물리·화학·수학·지구과학이 모두 들어가요.</p>
+        </div>
+        <div class="card">
+          <h3>환경을 지키는 과학적 사고</h3>
+          <table class="table" aria-label="환경 선택 비교 표">
+            <thead><tr><th>상황</th><th>과학적 판단 기준</th><th>더 나은 선택</th></tr></thead>
+            <tbody>
+              <tr><td>텀블러 vs 일회용컵</td><td>전 과정 탄소발자국(LCA)</td><td>50~100회 이상 재사용 시 유리</td></tr>
+              <tr><td>대중교통 vs 자가용</td><td>인당 에너지 소모</td><td>도심 통근은 대중교통이 평균 유리</td></tr>
+              <tr><td>LED 교체</td><td>광효율(lm/W)·수명</td><td>전기요금·교체횟수 절감</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 집에서 하는 간단 실험 -->
+    <section id="lab" class="container">
+      <h2>집에서 가능한 <span class="chip">안전한</span> 미니 실험</h2>
+      <div class="grid g-3">
+        <div class="card">
+          <h3>표면장력 보기</h3>
+          <p>동전 위에 물방울을 한 방울씩 떨어뜨려 돔 형태가 깨지는 순간을 관찰.</p>
+          <ul class="mini"><li>개념: 분자 간 응집력</li><li>팁: 비누 한 방울로 차이 비교</li></ul>
+        </div>
+        <div class="card">
+          <h3>자연 pH 지시약</h3>
+          <p>적양배추 물을 지시약으로 사용. 레몬즙(산), 베이킹소다물(염기)로 색 변화를 관찰.</p>
+          <ul class="mini"><li>개념: 산·염기</li><li>안전: 장갑 착용 권장</li></ul>
+        </div>
+        <div class="card">
+          <h3>그림자로 태양 고도 추정</h3>
+          <p>막대 그림자 길이와 삼각비로 정오 무렵 태양 고도를 계산.</p>
+          <ul class="mini"><li>개념: 기하·지구운동</li><li>팁: 날짜별 변화 기록</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 진로 -->
+    <section id="career" class="container">
+      <h2>과학 → 진로</h2>
+      <div class="grid g-3">
+        <div class="card">
+          <h3>의·생명</h3>
+          <p>의사, 연구원, 임상공학사, 바이오데이터 분석가</p>
+          <p class="mini">추천 과목: 생명·화학·통계</p>
+        </div>
+        <div class="card">
+          <h3>공학·소재</h3>
+          <p>반도체·배터리·친환경소재 엔지니어, 로봇 개발</p>
+          <p class="mini">추천 과목: 물리·화학</p>
+        </div>
+        <div class="card">
+          <h3>지구·우주·데이터</h3>
+          <p>기상, 위성·원격탐사, 데이터과학자, 과학커뮤니케이터</p>
+          <p class="mini">추천 과목: 지구과학·정보·수학</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="quiz" class="container">
+      <h2>3문제로 확인하는 미니 퀴즈</h2>
+      <div class="card">
+        <p class="mini">정답을 클릭하면 즉시 피드백이 나옵니다.</p>
+        <div class="quiz" role="group" aria-labelledby="q1">
+          <h3 id="q1">Q1. LED 전구가 유용한 주된 이유는?</h3>
+          <button class="choice" data-correct="false">빛이 몽환적으로 예쁘다</button>
+          <button class="choice" data-correct="true">전력 대비 광출력이 크고 수명이 길다</button>
+          <button class="choice" data-correct="false">무거워서 흔들리지 않는다</button>
+        </div>
+        <hr style="border-color:#2A3270;opacity:.4" />
+        <div class="quiz" role="group" aria-labelledby="q2">
+          <h3 id="q2">Q2. 과학적 의사결정에서 가장 중요한 것은?</h3>
+          <button class="choice" data-correct="false">권위자의 말</button>
+          <button class="choice" data-correct="true">재현 가능한 증거와 데이터</button>
+          <button class="choice" data-correct="false">좋은 느낌</button>
+        </div>
+        <hr style="border-color:#2A3270;opacity:.4" />
+        <div class="quiz" role="group" aria-labelledby="q3">
+          <h3 id="q3">Q3. 스마트폰 위치 정확도 향상에 기여하는 이론은?</h3>
+          <button class="choice" data-correct="false">열역학 제2법칙</button>
+          <button class="choice" data-correct="true">상대성이론 보정</button>
+          <button class="choice" data-correct="false">멘델의 유전법칙</button>
+        </div>
+        <p id="score" class="foot" aria-live="polite">점수: 0/3</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container">
+      <h2>자주 묻는 질문</h2>
+      <details>
+        <summary>이미지 저작권은 안전한가요?</summary>
+        <p>이 페이지의 그림은 전부 인라인 SVG로 만든 AI풍 일러스트입니다. 자유롭게 수정·배포할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>학교 발표 자료로 써도 되나요?</summary>
+        <p>네. 바로 사용 가능하며, 원하시면 PPT/인쇄용 버전도 만들어 드릴게요.</p>
+      </details>
+    </section>
+
+    <section class="container foot">
+      <p>© 2025 Wonder of Science · 과학의 신비로움과 유용성을 함께 탐구해요.</p>
+    </section>
+  </main>
+
+  <script>
+    // 퀴즈 인터랙션
+    (function(){
+      let score=0, answered=new Set();
+      const scoreEl=document.getElementById('score');
+      document.querySelectorAll('.quiz').forEach((group, gi)=>{
+        group.addEventListener('click', e=>{
+          const btn=e.target.closest('.choice'); if(!btn) return;
+          if(answered.has(group)) return; // 그룹당 1회
+          answered.add(group);
+          const correct = btn.dataset.correct==="true";
+          if(correct){ score++; btn.classList.add('correct'); }
+          else{ btn.classList.add('wrong'); }
+          scoreEl.textContent = `점수: ${score}/3`;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
